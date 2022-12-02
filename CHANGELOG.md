@@ -2,7 +2,7 @@
 
 All notable changes to the "ttk91-vscode" extension will be documented in this file.
 
-## [0.1] (02/12/2022)
+## [0.0.1] (02/12/2022)
 
 ### Added
 

@@ -3,6 +3,7 @@
 	"displayName": "TTK91 Programming Language",
 	"description": "TTK91 symbolic machine language support for VSCode",
 	"version": "0.0.1",
+	"repository": "github:3nd3r1/ttk91-vscode",
 	"engines": {
 		"vscode": "^1.73.0"
 	},
