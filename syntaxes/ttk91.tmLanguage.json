@@ -1,0 +1,155 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "ttk91",
+	"patterns": [
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#jumping"
+		},
+		{
+			"include": "#arithmetic"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#subroutine"
+		},
+		{
+			"include": "#stack"
+		},
+		{
+			"include": "#data"
+		},
+		{
+			"include": "#compiler-directives"
+		},
+		{
+			"include": "#system"
+		},
+		{
+			"include": "#streams"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#other"
+		},
+		{ "include": "#registers" }
+	],
+	"repository": {
+		"operators": {
+			"patterns": [
+				{
+					"match": "\\B( ?= ?| ?@ ?)\\b",
+					"name": "keyword.operator.addressing.ttk91"
+				},
+				{
+					"match": "\\b(,)\\B",
+					"name": "keyword.operator.comma-separator.ttk91"
+				}
+			]
+		},
+		"jumping": {
+			"patterns": [
+				{
+					"match": "\\b(?i:(JUMP|JNEG|JZER|JPOS|JNNEG|JNZER|JNPOS|JLES|JEQU|JGRE|JNLES|JNEQU|JNGRE))\\b",
+					"name": "keyword.control.jumping.ttk91"
+				}
+			]
+		},
+		"arithmetic": {
+			"patterns": [
+				{
+					"match": "(?i:(ADD|SUB|MUL|DIV|MOD|AND|OR|XOR|SHL|SHR|NOT|SHRA|COMP))",
+					"name": "keyword.control.arithmetic-logical.ttk91"
+				}
+			]
+		},
+		"comments": {
+			"begin": "(;)",
+			"end": "($)",
+			"name": "comment.line.semicolon.ttk91"
+		},
+		"subroutine": {
+			"patterns": [
+				{
+					"match": "\\b(?i:(CALL|EXIT|SVC))\\b",
+					"name": "keyword.control.subroutine-system.ttk91"
+				}
+			]
+		},
+		"stack": {
+			"patterns": [
+				{
+					"match": "\\b(?i:(PUSHR|POPR|CALL|EXIT))\\b",
+					"name": "keyword.control.stack.ttk91"
+				}
+			]
+		},
+		"data": {
+			"patterns": [
+				{
+					"match": "\\b(?i:(LOAD|STORE|IN|OUT))\\b",
+					"name": "keyword.control.data.ttk91"
+				}
+			]
+		},
+		"compiler-directives": {
+			"patterns": [
+				{
+					"match": "\\b(?i:(EQU|DC|DS|DEF))\\b",
+					"name": "keyword.control.compiler-directives.ttk91"
+				}
+			]
+		},
+		"system": {
+			"patterns": [
+				{
+					"match": "\\b(?i:(HALT|TIME|DATE|READ|WRITE))\\b",
+					"name": "support.function.system.ttk91"
+				}
+			]
+		},
+		"streams": {
+			"patterns": [
+				{
+					"match": "\\b(=|)(?i:(KBD|CRT|STDIN|STDOUT))\\b",
+					"name": "support.variable.target-device-or-stream.ttk91"
+				}
+			]
+		},
+		"numbers": {
+			"patterns": [
+				{
+					"match": "\\b[0-9]+\\b",
+					"name": "constant.numeric.decimal.ttk91"
+				},
+				{
+					"match": "\\b0x[0-9A-F]+\\b",
+					"name": "constant.numeric.hexadecimal.ttk91"
+				}
+			]
+		},
+		"other": {
+			"patterns": [
+				{
+					"match": "\\b[0-9]+\\b",
+					"name": "constant.numeric.decimal.ttk91"
+				}
+			]
+		},
+		"registers": {
+			"patterns": [
+				{
+					"match": "\\b(?i:(R[0-7]|SP|FP|PC))\\b",
+					"name": "entity.name.type.register.ttk91"
+				}
+			]
+		}
+	},
+	"scopeName": "source.ttk91"
+}

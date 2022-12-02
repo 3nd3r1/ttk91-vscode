@@ -1,0 +1,34 @@
+{
+	"name": "ttk91-vscode",
+	"displayName": "TTK91 Programming Language",
+	"description": "TTK91 symbolic machine language support for VSCode",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.73.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "ttk91",
+				"aliases": [
+					"ttk91",
+					"ttk-91"
+				],
+				"extensions": [
+					".k91"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "ttk91",
+				"scopeName": "source.ttk91",
+				"path": "./syntaxes/ttk91.tmLanguage.json"
+			}
+		]
+	}
+}
