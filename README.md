@@ -5,7 +5,7 @@ TTK-91 is used by [Titokone](https://github.com/titokone/titokone) machine langu
 
 ## Installation
 
--   To start using this extension with Visual Studio Code copy it into the `<user home>/.vscode/extensions` folder and restart Code.
+-   Download the latest vsix file from releases and open it!
 
 ## Errors
 
