@@ -13,6 +13,7 @@ TTK-91 is used by [Titokone](https://github.com/titokone/titokone) machine langu
 -   Variables aren't tokenized
 -   Jump destinations aren't tokenized
 -   Register tokenization is sloppy. For example, pc will be read as register even if it's meant to be a symbol.
+-   "PUSH" and "POP" not highlighted. (Will be fixed in 0.0.2)
 
 ## Todo
 
