@@ -2,6 +2,15 @@
 
 All notable changes to the "ttk91-vscode" extension will be documented in this file.
 
+## [Unreleased]
+
+### Added
+
+### Fixed
+
+-   "PUSH" and "POP" in stack grammar
+-   "CALL" and "EXIT" out of stack grammar
+
 ## [0.0.1] (02/12/2022)
 
 ### Added

@@ -85,7 +85,7 @@
 		"stack": {
 			"patterns": [
 				{
-					"match": "\\b(?i:(PUSHR|POPR|CALL|EXIT))\\b",
+					"match": "\\b(?i:(PUSHR|POPR|PUSH|POP))\\b",
 					"name": "keyword.control.stack.ttk91"
 				}
 			]
