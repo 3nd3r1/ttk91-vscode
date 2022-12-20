@@ -2,12 +2,21 @@
 
 All notable changes to the "ttk91-vscode" extension will be documented in this file.
 
+## [0.0.3] (20/12/2022)
+
+### Added
+
+-   Added icon
+
+### Fixed
+
+-
+
 ## [0.0.2] (20/12/2022)
 
 ### Added
 
 -   Symbols and jump destinations grammar
--   Icon
 
 ### Fixed
 
