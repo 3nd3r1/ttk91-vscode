@@ -3,9 +3,6 @@
 	"name": "ttk91",
 	"patterns": [
 		{
-			"include": "#operators"
-		},
-		{
 			"include": "#jumping"
 		},
 		{
@@ -36,9 +33,17 @@
 			"include": "#numbers"
 		},
 		{
-			"include": "#other"
+			"include": "#registers"
 		},
-		{ "include": "#registers" }
+		{
+			"include": "#jump-destinations"
+		},
+		{
+			"include": "#symbols"
+		},
+		{
+			"include": "#operators"
+		}
 	],
 	"repository": {
 		"operators": {
@@ -54,20 +59,12 @@
 			]
 		},
 		"jumping": {
-			"patterns": [
-				{
-					"match": "\\b(?i:(JUMP|JNEG|JZER|JPOS|JNNEG|JNZER|JNPOS|JLES|JEQU|JGRE|JNLES|JNEQU|JNGRE))\\b",
-					"name": "keyword.control.jumping.ttk91"
-				}
-			]
+			"match": "\\b(?i:(JUMP|JNEG|JZER|JPOS|JNNEG|JNZER|JNPOS|JLES|JEQU|JGRE|JNLES|JNEQU|JNGRE))\\b",
+			"name": "keyword.control.jumping.ttk91"
 		},
 		"arithmetic": {
-			"patterns": [
-				{
-					"match": "(?i:(ADD|SUB|MUL|DIV|MOD|AND|OR|XOR|SHL|SHR|NOT|SHRA|COMP))",
-					"name": "keyword.control.arithmetic-logical.ttk91"
-				}
-			]
+			"match": "(?i:(ADD|SUB|MUL|DIV|MOD|AND|OR|XOR|SHL|SHR|NOT|SHRA|COMP))",
+			"name": "keyword.control.arithmetic-logical.ttk91"
 		},
 		"comments": {
 			"begin": "(;)",
@@ -75,52 +72,31 @@
 			"name": "comment.line.semicolon.ttk91"
 		},
 		"subroutine": {
-			"patterns": [
-				{
-					"match": "\\b(?i:(CALL|EXIT|SVC))\\b",
-					"name": "keyword.control.subroutine-system.ttk91"
-				}
-			]
+			"match": "\\b(?i:(CALL|EXIT|SVC))|(?i:CALL)\\s*,\\s*(?i:[a-z]*)\\b",
+			"name": "keyword.control.subroutine.ttk91"
 		},
 		"stack": {
-			"patterns": [
-				{
-					"match": "\\b(?i:(PUSHR|POPR|PUSH|POP))\\b",
-					"name": "keyword.control.stack.ttk91"
-				}
-			]
+			"match": "\\b(?i:(PUSHR|POPR|PUSH|POP))\\b",
+			"name": "keyword.control.stack.ttk91"
 		},
 		"data": {
-			"patterns": [
-				{
-					"match": "\\b(?i:(LOAD|STORE|IN|OUT))\\b",
-					"name": "keyword.control.data.ttk91"
-				}
-			]
+			"match": "\\b(?i:(LOAD|STORE|IN|OUT))\\b",
+			"name": "keyword.control.data.ttk91"
 		},
 		"compiler-directives": {
-			"patterns": [
-				{
-					"match": "\\b(?i:(EQU|DC|DS|DEF))\\b",
-					"name": "keyword.control.compiler-directives.ttk91"
-				}
-			]
+			"match": "\\b(?i:[a-z]*)\\s+(?i:(EQU|DC|DS|DEF))\\b",
+			"captures": {
+				"0": { "name": "variable.other.constant.symbol.ttk91" },
+				"1": { "name": "keyword.control.compiler-directive.ttk91" }
+			}
 		},
 		"system": {
-			"patterns": [
-				{
-					"match": "\\b(?i:(HALT|TIME|DATE|READ|WRITE))\\b",
-					"name": "support.function.system.ttk91"
-				}
-			]
+			"match": "\\b(?i:(HALT|TIME|DATE|READ|WRITE))\\b",
+			"name": "support.function.system.ttk91"
 		},
 		"streams": {
-			"patterns": [
-				{
-					"match": "\\b(=|)(?i:(KBD|CRT|STDIN|STDOUT))\\b",
-					"name": "support.variable.target-device-or-stream.ttk91"
-				}
-			]
+			"match": "\\b(=|)(?i:(KBD|CRT|STDIN|STDOUT))\\b",
+			"name": "support.function.system.streams.ttk91"
 		},
 		"numbers": {
 			"patterns": [
@@ -134,21 +110,17 @@
 				}
 			]
 		},
-		"other": {
-			"patterns": [
-				{
-					"match": "\\b[0-9]+\\b",
-					"name": "constant.numeric.decimal.ttk91"
-				}
-			]
+		"symbols": {
+			"match": "\\b(?i:[a-z]+)\\b",
+			"name": "variable.other.constant.symbol.ttk91"
+		},
+		"jump-destinations": {
+			"match": "\\b(?m)^(?i:[a-z]+)\\b",
+			"name": "support.function.jump-destination.ttk91"
 		},
 		"registers": {
-			"patterns": [
-				{
-					"match": "\\b(?i:(R[0-7]|SP|FP|PC))\\b",
-					"name": "entity.name.type.register.ttk91"
-				}
-			]
+			"match": "\\b(?i:(R[0-7]|SP|FP|PC))\\b",
+			"name": "entity.name.type.register.ttk91"
 		}
 	},
 	"scopeName": "source.ttk91"
