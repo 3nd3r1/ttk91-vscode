@@ -7,6 +7,7 @@ All notable changes to the "ttk91-vscode" extension will be documented in this f
 ### Added
 
 -   Symbols and jump destinations grammar
+-   Icon
 
 ### Fixed
 
